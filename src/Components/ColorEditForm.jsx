@@ -21,31 +21,9 @@ function ColorEditForm() {
   };
 
   // Update a color. Redirect to show view
-  const updateColor = () => {
-    fetch(`${API}/colors/${index}`, {
-      method: "PUT",
-      body: JSON.stringify(color),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(() => {
-        navigate(`/colors/${index}`);
-      })
-      .catch((error) => console.error("catch", error));
-  };
+  const updateColor = () => {};
 
   // On page load, fill in the form with the color data.
-  useEffect(() => {
-    fetch(`${API}/colors/${index}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((responseJSON) => {
-        setColor(responseJSON);
-      })
-      .catch((error) => console.error(error));
-  }, [index]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -61,7 +39,7 @@ function ColorEditForm() {
           value={color.name}
           type="text"
           onChange={handleTextChange}
-          placeholder="Name of Website"
+          placeholder="Name of Color"
           required
         />
 

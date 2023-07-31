@@ -11,19 +11,7 @@ function ColorNewForm() {
   });
 
   // Add a color. Redirect to the index view.
-  const addColor = () => {
-    fetch(`${API}/colors`, {
-      method: "POST",
-      body: JSON.stringify(color),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(() => {
-        navigate(`/colors`);
-      })
-      .catch((error) => console.error("catch", error));
-  };
+  const addColor = () => {};
 
   const handleTextChange = (event) => {
     setColor({ ...color, [event.target.id]: event.target.value });
@@ -47,7 +35,7 @@ function ColorNewForm() {
           value={color.name}
           type="text"
           onChange={handleTextChange}
-          placeholder="Name of Website"
+          placeholder="Name of Color"
           required
         />
 
